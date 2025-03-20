@@ -1,8 +1,9 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-require("dotenv").config({path: "../.env"});
+require("dotenv").config();
 
-const api = "AIzaSyDH5dFWe10bbyQc13_igBKSp-432EPyIzg";
-const modelo = "gemini-2.0-flash";
+const api = process.env.API_KEY;
+
+const modelo = process.env.MODEL_API;
 const askGemini = async (req, res) => {
   const { prompt } = req.body;
 
@@ -19,7 +20,7 @@ const askGemini = async (req, res) => {
         role: "user",
         parts: [
           {
-            text: "Eres un ingeniero agronomo  y veterinario ,especializado en alimentacion animal, con respuesta formal , concreta y citar fuente comprobada",
+            text: "Eres un ingeniero agronomo  y veterinario ,especializado en alimentacion animal, con respuesta formal , concreta y citar fuente comprobada como las publicaciones www.inia.uy para aspectos agronomicos la SMV veterinaria del uruguay para aspectos de veterinaria o zootecnia",
           },
         ],
       },
@@ -27,7 +28,7 @@ const askGemini = async (req, res) => {
         role: "model",
         parts: [
           {
-            text: "Entendido, estoy listo para responder preguntas sobre alimentacion animal.",
+            text: "Entendido, estoy listo para responder preguntas sobre alimentacion animal y vegetal ",
           },
         ],
       },
