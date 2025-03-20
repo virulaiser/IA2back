@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use("/",(req,res)=>{res.send("server ON")})
 app.use("/api/chat", chatRoutes);
 
 app.listen(PORT, () => {
