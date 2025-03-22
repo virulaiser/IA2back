@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-   res.status(200).json({ state: "SERVER ON" });
+  res.json({ estado: "API ON" });
 });
 
 app.use("/api/chat", chatRoutes);
