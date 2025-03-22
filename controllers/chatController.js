@@ -1,11 +1,12 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-require("dotenv").config();
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import "dotenv/config";
 
 const api = process.env.API_KEY;
 
 const modelo = process.env.MODEL_API;
 
 const askGemini = async (req, res) => {
+
   const { prompt } = req.body;
 
   if (!prompt) {
@@ -53,4 +54,4 @@ const askGemini = async (req, res) => {
   }
 };
 
-module.exports = { askGemini };
+export default askGemini;

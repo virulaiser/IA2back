@@ -1,8 +1,10 @@
-const express = require("express");
-const { askGemini } = require("../controllers/chatController");
+import express from "express";
+import  askGemini  from "../controllers/chatController.js";
 
 const router = express.Router();
 
 router.post("/ask", askGemini);
 
-module.exports = router;
+
+export default router;
+
