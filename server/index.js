@@ -10,8 +10,9 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("<h1>Server On</h1>");
+   res.status(200).json({ state: "SERVER ON" });
 });
+
 app.use("/api/chat", chatRoutes);
 
 app.listen(PORT, () => {

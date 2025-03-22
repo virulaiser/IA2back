@@ -4,6 +4,7 @@ require("dotenv").config();
 const api = process.env.API_KEY;
 
 const modelo = process.env.MODEL_API;
+
 const askGemini = async (req, res) => {
   const { prompt } = req.body;
 
